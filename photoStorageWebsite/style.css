@@ -1,0 +1,664 @@
+/*---home page styling---*/
+/* ======================
+   GLOBAL RESET
+====================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #e0e0e0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  backdrop-filter: blur(10px);
+  padding: 15px 60px;
+  box-shadow: #1a1a1a;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
+  
+.navbar nav a {
+  color: #ccc;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #00c6ff;
+  transform: scale(1.1);
+}
+
+
+
+/* ======================
+   FLOATING BACKGROUND
+====================== */
+.floating-bg {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 20% 20%, #00c6ff40, transparent 40%),
+              radial-gradient(circle at 80% 60%, #0072ff40, transparent 50%);
+  animation: floatBg 10s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes floatBg {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -20px) scale(1.05); }
+}
+
+/* ======================
+   HERO SECTION
+====================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  margin-top: 90px;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 15px;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 2s 0.5s forwards;
+}
+
+.glow {
+  text-shadow: 0 0 10px #00c6ff80, 0 0 20px #0072ff40;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.primary {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: linear-gradient(45deg, #0072ff, #00ffcc);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00c6ff70;
+}
+
+.btn.secondary {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: linear-gradient(45deg, #0072ff, #00ffcc);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00c6ff70;
+}
+
+
+/* ======================
+   FOOTER
+====================== */
+footer {
+  background: #0f0f0f;
+  text-align: center;
+  padding: 20px 0;
+  color: #888;
+  border-top: 1px solid #1f1f1f;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+/* ======================
+   ANIMATIONS
+====================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+  /* FEATURES SECTION (FIXED)
+====================== */
+.photo-feat-section {
+  padding: 100px 0;
+  background-color: #0d121c;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-feat-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto; /* ✅ Centers the whole section */
+  padding: 0 20px;
+  box-sizing: border-box;
+  
+}
+
+/* Heading */
+.photo-feat-heading {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  color: #00d4ff;
+  font-weight: 700;
+}
+
+/* Feature Cards Grid */
+.photo-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ Exactly 4 columns */
+  gap: 25px;
+  justify-items: center; /* Centers content inside grid cells */
+  align-items: stretch;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .photo-feat-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-feat-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
+
+/* Feature Card */
+.photo-feat-card {
+  background-color: #1a202c;
+  padding: 40px 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  transition: all 0.4s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSlideUp 0.8s ease forwards;
+}
+
+/* Animation delay for each card */
+.photo-feat-card:nth-child(1) { animation-delay: 0.1s; }
+.photo-feat-card:nth-child(2) { animation-delay: 0.2s; }
+.photo-feat-card:nth-child(3) { animation-delay: 0.3s; }
+.photo-feat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effect */
+.photo-feat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.25);
+  background-color: #1f2735;
+}
+
+/* Icons */
+.photo-feat-icon {
+  font-size: 3rem;
+  color: #00d4ff;
+  margin-bottom: 20px;
+}
+
+/* Titles and Paragraphs */
+.photo-feat-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.photo-feat-card p {
+  font-size: 1rem;
+  color: #c0c8d4;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* Animation */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation effect for service cards */
+.service-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When card becomes visible */
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix layout shift issue */
+main, .hero, .photo-feat-section, .photo-feat-container {
+  padding-left: 120px;
+  padding-right: 60px;
+  box-sizing: border-box;
+}
+
+main, .hero, .photo-feat-section, .photo-feat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  main, .hero, .photo-feat-section, .photo-feat-container {
+    padding: 0 20px; /* equal sides on small screens */
+  }
+}
+
+
+/* ---------- Signup Form Styling ---------- */
+/* ---------- Signup Form Styling ---------- */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+ header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  background: linear-gradient(90deg, #222, #111);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #00c3ff;
+}
+
+header nav .btn {
+  padding: 8px 16px;
+  background: #00c3ff;
+  border-radius: 8px;
+  transition: background 0.4s ease;
+}
+
+header nav .btn:hover {
+  background: #0086c7;
+} */
+
+/* Signup Container */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #0f0f0f, #202020);
+  animation: gradientMove 8s infinite alternate;
+}
+
+
+@keyframes gradientMove {
+  0% { background: linear-gradient(120deg, #0f0f0f, #202020); }
+  100% { background: linear-gradient(120deg, #1a1a1a, #0c0c0c); }
+} 
+/* Signup Form */
+.signup-form {
+  background: #181818;
+  padding: 40px;
+  border-radius: 16px;
+  width: 380px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  text-align: center;
+}
+
+.signup-form h2 {
+  color: #00c3ff;
+  margin-bottom: 30px;
+} 
+
+/* Input Fields */
+ .input-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  background: #101010;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #00c3ff;
+  background: #151515;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  color: #aaa;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 10px;
+  color: #00c3ff;
+  font-size: 12px;
+} 
+
+/* Password Eye Icon */
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.input-group i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.input-group i:hover {
+  color: #00bfff;
+}
+ 
+ .password-box {
+  position: relative;
+} 
+
+.password-box i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.password-box i:hover {
+  color: #00c3ff;
+}  
+
+/* Button */
+ .btn {
+  width: 100%;
+  padding: 12px;
+  background: #00c3ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.btn:hover {
+  background: #0086c7;
+} 
+
+/* Bottom Text */
+ .signup-form p {
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.signup-form a {
+  color: #00c3ff;
+  text-decoration: none;
+}
+
+.signup-form a:hover {
+  text-decoration: underline;
+} 
+
+/* --- Eye Icon Styling for Password Fields --- */
+.password-box {
+  position: relative;
+}
+
+.password-box .toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.password-box .toggle-password:hover {
+  color: #00c3ff;
+  transform: translateY(-50%) scale(1.1);
+} 
+
+/*--login page styling--*/
+
+/* Options Row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 20px 0;
+  font-size: 14px;
+  color: #d4d3d9;
+}
+
+.options a {
+  color: #00c3ff;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+
+/*--login eyeicon style *--/
+
+ .password-box {
+  position: relative;
+}
+
+.password-box input {
+  width: 100%;
+  padding-right: 40px; /* Make space for eye icon */
+/* } */
+
+.password-box .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.password-box .toggle-password:hover {
+  color: #00bfff;
+}
+
+
+
+
+/*--forgotpassword while login styling--*/
+.forgot-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.forgot-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.forgot-container button {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.forgot-container button:hover {
+  background: #0056b3;
+}
+
+/*---To make website responsive---*/
+@media (max-width: 768px) {
+  .about-content, .features-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-card {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .about-image img {
+    max-width: 300px;
+  }
+}

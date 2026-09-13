@@ -1,0 +1,257 @@
+/*====== DARK THEME GENERAL ======*/
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== HEADER ====== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.uploaded{
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #00bcd4;
+  text-align: center;
+}
+.header .logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00bcd4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+}
+
+/* ====== NAV LINKS ====== */
+.header nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header nav a:hover {
+  color: #00bcd4;
+  transform: translateY(-2px);
+}
+
+/* === Active Page (Profile) Highlight === */
+.header nav a.active {
+  color: #00e5ff;
+  font-weight: 600;
+  position: relative;
+}
+
+/* === Logout Button === */
+.logout-btn {
+  background: linear-gradient(90deg, #ff5252, #ff1744);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 23, 68, 0.3);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #ff1744, #ff5252);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
+}
+
+/* ====== MAIN CONTAINER ====== */
+.container {
+  width: 85%;
+  margin: 40px auto;
+  background: #1b1b1b;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ====== UPLOAD FORM ====== */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.upload-form input, 
+.upload-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+.upload-form input[type="file"],
+.upload-form input[type="text"] {
+  background: #2a2a2a;
+  color: #ddd;
+}
+
+.upload-form button {
+  background: #00bcd4;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-form button:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}
+
+/* ====== PREVIEW SECTION ====== */
+.preview-container {
+  text-align: center;
+  margin: 20px 0;
+  animation: fadeIn 0.6s;
+}
+
+.preview-container img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 10px #00bcd4;
+  transition: transform 0.3s;
+}
+
+.preview-container img:hover {
+  transform: scale(1.05);
+}
+
+/* ====== GALLERY GRID ====== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* ====== PHOTO CARD ====== */
+.photo-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.5s ease-in-out;
+  
+  /* --- FIX: Enable Flexbox for vertical layout --- */
+  display: flex;
+  flex-direction: column; 
+}
+
+.photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px #00bcd4;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.photo-info {
+  padding: 10px;
+  color: #ccc;
+  font-size: 14px;
+  /* Allow the photo info to grow if necessary, but don't force it */
+}
+
+.photo-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.photo-date {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ====== ACTION BUTTONS ====== */
+.photo-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  
+  /* --- FIX: Push this container to the very bottom --- */
+  margin-top: auto;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.view { background: #2196f3; }
+.btn.edit { background: #4caf50; }
+.btn.delete { background: #f44336; }
+
+/* ==== Welcome Box ==== */
+.welcome-box {
+  text-align: center;
+  background: linear-gradient(135deg, #1b1b1b, #111);
+  border-radius: 15px;
+  padding: 25px 20px;
+  margin: 30px auto;
+  color: #e0e0e0;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.welcome-box h1 {
+  font-size: 1.8rem;
+  color: #00e5ff;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.welcome-box p {
+  font-size: 1rem;
+  color: #bbb;
+  font-weight: 400;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

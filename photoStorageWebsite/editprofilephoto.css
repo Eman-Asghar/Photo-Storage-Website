@@ -1,0 +1,219 @@
+body {
+  background-color: #121212;
+  color: #e5e5e5;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: #1f1f1f;
+  color: #00e5ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header .logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.header nav a:hover {
+  color: #00e5ff;
+  transform: scale(1.05);
+}
+
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.edit-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 500px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.edit-card h2 {
+  text-align: center;
+  color: #00e5ff;
+  margin-bottom: 20px;
+}
+
+.current-photo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.current-photo img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.current-photo img:hover {
+  transform: scale(1.05);
+}
+
+.edit-form {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.edit-form h3 {
+  color: #00e5ff;
+  margin-bottom: 10px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #2b2b2b;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.edit-form input[type="text"]:focus,
+.edit-form input[type="file"]:focus {
+  background: #333;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+/* .btn {
+  background: #00e5ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+} */
+
+/* .btn:hover {
+  background: #00e5ff;
+  transform: scale(1.05);
+} */
+
+.divider {
+  border: none;
+  height: 2px;
+  background: #333;
+  margin: 30px 0;
+}
+
+.new-preview {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.new-preview img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(20, 20, 20, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.new-preview img:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  background: linear-gradient(90deg, #00e5ff, #007bff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+}
+
+.back-gradient {
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #00e5ff, #00bcd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.back-gradient:hover {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8),
+               0 0 20px rgba(0, 188, 212, 0.6);
+  transform: scale(1.05);
+}
+
+/* ===== Header Buttons ===== */
+.back-btn {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #00bcd4;
+  text-shadow: 0 0 8px #00e5ff;
+  transform: scale(1.05);
+}
+
+/* Logout Button Style */
+.logout-btn {
+  background: linear-gradient(90deg, #ff5252, #ff1744);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 23, 68, 0.3);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #ff1744, #ff5252);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
+}
